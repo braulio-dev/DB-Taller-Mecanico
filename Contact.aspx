@@ -2,18 +2,14 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main aria-labelledby="title">
-        <h2 id="title"><%: Title %>.</h2>
-        <h3>Your contact page.</h3>
-        <address>
-            One Microsoft Way<br />
-            Redmond, WA 98052-6399<br />
-            <abbr title="Phone">P:</abbr>
-            425.555.0100
-        </address>
+        <h2 id="title"><%: Title %></h2>
+        <h3>Tu taller de confianza!</h3>
 
         <address>
-            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+            Fiona Kuang:   <a href="mailto:fiona.kuang@cetys.edu.mx">fiona.kuang@cetys.edu.mx</a><br />
+            Renata Flores:   <a href="mailto:renata.flores@cetys.edu.mx">renata.flores@cetys.edu.mx</a><br />
+            Kevin Hernández:   <a href="mailto:kevin.hernandez@cetys.edu.mx">kevin.hernandez@cetys.edu.mx</a><br />
+            Braulio Chamerry:   <a href="mailto:braulio.chamerry@cetys.edu.mx">braulio.chamerry@cetys.edu.mx</a><br />
         </address>
     </main>
 </asp:Content>
