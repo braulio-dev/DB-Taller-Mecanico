@@ -11,7 +11,16 @@ namespace ProyectoBD
 {
 
 
-    public partial class _Default
+    public partial class Query
     {
+
+        /// <summary>
+        /// Control GridViewQuery.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewQuery;
     }
 }
