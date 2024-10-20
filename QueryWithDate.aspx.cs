@@ -26,7 +26,7 @@ namespace ProyectoBD
 
             if (string.IsNullOrEmpty(startDate) || string.IsNullOrEmpty(endDate))
             {
-                // Mensaje de error
+                Response.Write("Por favor ingrese ambas fechas.");
                 return;
             }
 
@@ -44,16 +44,15 @@ namespace ProyectoBD
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
+                    command.Parameters.AddWithValue("@startDate", DateTime.Parse(startDate));
+                    command.Parameters.AddWithValue("@endDate", DateTime.Parse(endDate));
+
+                    // Abrir la conexión
+                    connection.Open();
 
                     try
 
                     {
-
-                        // Abrir la conexión
-
-                        connection.Open();
-
-
 
                         // Crear un adaptador de datos
 
@@ -108,9 +107,64 @@ namespace ProyectoBD
             switch (selectedQuery)
             {
                 case "1":
-                    //query = "SELECT * FROM vista WHERE Fecha_inicio >= @StartDate AND Fecha_inicio <= @EndDate";
+                    query = @"
+                        SELECT Nombre 
+                        FROM vw_reparaciones 
+                        WHERE Fecha_inicio >= @startDate AND Fecha_inicio <= @endDate 
+                        GROUP BY Nombre 
+                        ORDER BY COUNT(*) DESC 
+                        LIMIT 1";
                     break;
-                case "2":
+                case "5":
+                    query = @"
+                        SELECT Nombre_Departamento, COUNT(*) AS Numero_de_Atenciones
+                        FROM vw_diagnostico_departamento
+                        WHERE Fecha_inicio >= @startDate AND Fecha_inicio <= @endDate 
+                        GROUP BY ID_Departamento";
+                    break;
+                case "6":
+                    query = @"
+                        SELECT SUM(Costo_Total) AS Ganancias
+                        FROM vw_ventas_dep1
+                        WHERE Fecha_inicio >= @startDate AND Fecha_inicio <= @endDate";
+                    break;
+                case "7":
+                    query = @"
+                        SELECT Nombre, Sueldo * COUNT(*) AS Sueldo_Ganado
+                        FROM vw_ganancia_empleado
+                        WHERE Fecha_inicio >= @startDate AND Fecha_inicio <= @endDate
+                        GROUP BY ID_Empleado
+                        ORDER BY COUNT(*) DESC
+                        LIMIT 1";
+                    break;
+                case "11":
+                    query = @"
+                        SELECT ID_Departamento, Nombre_Departamento, COUNT(ID_Articulo) AS Numero_Refacciones_Utilizadas
+                        FROM vw_consumo_articulos
+                        WHERE Fecha_inicio >= @startDate AND Fecha_inicio <= @endDate
+                        GROUP BY ID_Departamento, Nombre_Departamento
+                        ORDER BY Numero_Refacciones_Utilizadas DESC
+                        LIMIT 1";
+                    break;
+                case "12":
+                    query = @"
+                        SELECT ID_Prom, Nombre_Prom
+                        FROM vw_promociones
+                        WHERE Fecha_inicio >= @startDate AND Fecha_inicio <= @endDate";
+                    break;
+                case "13":
+                    query = @"
+                        SELECT * FROM vw_servicio_garantia
+                        WHERE Fecha >= @startDate AND Fecha <= @endDate";
+                    break;
+                case "14":
+                    query = @"
+                        SELECT ID_Departamento, Nombre, COUNT(*) AS Total_Reparaciones
+                        FROM vw_dep_num_reparaciones
+                        WHERE Fecha_inicio >= @startDate AND Fecha_inicio <= @endDate
+                        GROUP  BY ID_Departamento
+                        ORDER BY COUNT(*) DESC
+                        LIMIT 1";
                     break;
                 default:
                     break;
