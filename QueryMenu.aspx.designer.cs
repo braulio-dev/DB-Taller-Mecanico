@@ -11,7 +11,7 @@ namespace ProyectoBD
 {
 
 
-    public partial class _Default
+    public partial class QueryMenu
     {
     }
 }

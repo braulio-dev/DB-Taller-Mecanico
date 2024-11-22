@@ -46,8 +46,8 @@
                 </button>
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Reporteador</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">Principal</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/QueryMenu">Reporteador</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">Acerca</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Equipo</a></li>
                     </ul>
                 </div>
@@ -58,7 +58,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Taller Mecani-kon</p>
             </footer>
         </div>
     </form>
