@@ -11,16 +11,7 @@ namespace ProyectoBD
 {
 
 
-    public partial class ViewClients
+    public partial class Automoviles
     {
-
-        /// <summary>
-        /// GridViewResults control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewResults;
     }
 }

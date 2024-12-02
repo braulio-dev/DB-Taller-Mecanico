@@ -1,9 +1,9 @@
-﻿<%@ Page Title="Results" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewClients.aspx.cs" Inherits="ProyectoBD.ViewClients" %>
+﻿<%@ Page Title="Results" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewCars.aspx.cs" Inherits="ProyectoBD.ViewCars" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <main>
-        <h1>Clientes</h1>
+        <h1>Automóvíles</h1>
         <asp:GridView ID="GridViewResults" runat="server" AutoGenerateColumns="true" CssClass="table table-bordered" />
 
         <style>

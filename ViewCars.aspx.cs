@@ -1,11 +1,15 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Web;
 using System.Web.UI;
-using MySql.Data.MySqlClient;
+using System.Web.UI.WebControls;
 
 namespace ProyectoBD
 {
-    public partial class ViewClients : Page
+    public partial class ViewCars : Page
     {
 
         protected void Page_Load(object sender, EventArgs e)
@@ -14,7 +18,7 @@ namespace ProyectoBD
             {
                 // Crear la consulta SQL
 
-                string query = "SELECT ID_Cliente as ID, Nombre, Telefono, Correo_Electronico as Correo FROM cliente";
+                string query = "SELECT ID_Carro, ID_Cliente, ID_Modelo, Matricula, Año FROM automovil";
 
                 // Crear una conexión MySQL aqui deben poner la información del servidor, de la bdd, usuario y password
 

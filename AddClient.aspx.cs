@@ -47,7 +47,7 @@ namespace ProyectoBD
                         using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
                         {
                             // Crear un DataTable para almacenar los datos
-                            DataTable dataTable = new DataTable();
+                            System.Data.DataTable dataTable = new System.Data.DataTable();
 
                             // Llenar el DataTable
                             adapter.Fill(dataTable);
@@ -55,6 +55,8 @@ namespace ProyectoBD
                             // Asignar el DataTable al GridView
                             GridViewResults.DataSource = dataTable;
                             GridViewResults.DataBind();
+
+                            Response.Write("El cliente se agregó exitosamente.<br>");
                         }
                     }
                     catch (Exception ex)

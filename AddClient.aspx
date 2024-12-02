@@ -32,14 +32,30 @@
 
             .submit-button {
                 padding: 10px;
-                background-color: #2ecc71;
+                background-color: #3498db;
                 color: white;
                 border: none;
                 cursor: pointer;
             }
 
             .submit-button:hover {
-                background-color: #27ae60;
+                background-color: #2980b9;
+            }
+
+            .table {
+                width: 100%;
+                margin-top: 20px;
+                border-collapse: collapse;
+            }
+
+            .table-bordered {
+                border: 1px solid #ddd;
+            }
+
+            .table-bordered th, .table-bordered td {
+                padding: 8px;
+                text-align: left;
+                border: 1px solid #ddd;
             }
         </style>
     </main>

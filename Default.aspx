@@ -64,6 +64,30 @@
                         <p>Gestiona la información de los clientes y registra nuevos.</p>
                     </a>
                 </div>
+
+                <!-- Gestión de Automóviles -->
+                <div class="menu-box">
+                    <a href="Automoviles.aspx">
+                        <h2>Automóviles</h2>
+                        <p>Gestiona la información de los automóviles y registra nuevos.</p>
+                    </a>
+                </div>
+
+                <!-- Gestión de Diagnósticos -->
+                <div class="menu-box">
+                    <a href="Diagnostico.aspx">
+                        <h2>Añadir Diagnóstico</h2>
+                        <p>Registra nuevos diagnósticos.</p>
+                    </a>
+                </div>
+
+                <!-- Gestión de Ventas -->
+                <div class="menu-box">
+                    <a href="Venta.aspx">
+                        <h2>Ventas</h2>
+                        <p>Gestiona la información de las ventas y registra nuevas ventas.</p>
+                    </a>
+                </div>
             </div>
         </div>
     </main>

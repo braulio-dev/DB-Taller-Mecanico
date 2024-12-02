@@ -11,7 +11,7 @@ namespace ProyectoBD
 {
 
 
-    public partial class ViewClients
+    public partial class ViewCars
     {
 
         /// <summary>

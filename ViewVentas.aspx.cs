@@ -5,7 +5,7 @@ using MySql.Data.MySqlClient;
 
 namespace ProyectoBD
 {
-    public partial class ViewClients : Page
+    public partial class ViewVentas : Page
     {
 
         protected void Page_Load(object sender, EventArgs e)
@@ -14,7 +14,7 @@ namespace ProyectoBD
             {
                 // Crear la consulta SQL
 
-                string query = "SELECT ID_Cliente as ID, Nombre, Telefono, Correo_Electronico as Correo FROM cliente";
+                string query = "SELECT ID_Venta, Costo_Total, ID_Prom, ID_Diagnostico, Fecha, Tipo_Pago FROM venta";
 
                 // Crear una conexión MySQL aqui deben poner la información del servidor, de la bdd, usuario y password
 
