@@ -1,9 +1,8 @@
-﻿<%@ Page Title="Query Menu" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ProyectoBD._Default" %>
+﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Clientes.aspx.cs" Inherits="ProyectoBD.Clientes" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
     <main>
-        <style>
+                <style>
             .menu-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -46,26 +45,23 @@
         </style>
 
         <div>
-            <h1>Taller Mecani-Kon</h1>
+            <h1>Clientes</h1>
 
             <div class="menu-grid">
-                <!-- Acceso al Reporteador -->
                 <div class="menu-box">
-                    <a href="QueryMenu.aspx">
-                        <h2>Reporteador Principal</h2>
-                        <p>Accede a los reportes de información del taller para supervisión y análisis de datos.</p>
+                    <a href="AddClient.aspx">
+                        <h2>Nuevo Cliente</h2>
+                        <p>Agregar un nuevo cliente al sistema.</p>
                     </a>
                 </div>
 
-                <!-- Gestión de Clientes -->
                 <div class="menu-box">
-                    <a href="Clientes.aspx">
-                        <h2>Clientes</h2>
-                        <p>Gestiona la información de los clientes y registra nuevos.</p>
+                    <a href="ViewClients.aspx">
+                        <h2>Ver Clientes</h2>
+                        <p>Desplegar todos los clientes en el sistema.</p>
                     </a>
                 </div>
             </div>
         </div>
     </main>
-
 </asp:Content>

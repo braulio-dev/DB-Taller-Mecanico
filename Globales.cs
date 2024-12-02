@@ -7,6 +7,6 @@ namespace ProyectoBD
 {
     public static class Globales
     {
-        public static string connectionStringLocal = "Server=localhost; Database=taller_mecanico; User ID=root; Password=Renatafs13";
+        public static string connectionStringLocal = "Server=localhost; Database=taller_mecanico; User ID=root; Password=admin";
     }
 }

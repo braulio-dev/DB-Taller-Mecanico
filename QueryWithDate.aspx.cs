@@ -30,72 +30,73 @@ namespace ProyectoBD
                 return;
             }
 
+            // Validar que las fechas sean fechas
+            DateTime startDateParsed;
+            DateTime endDateParsed;
+            if (!DateTime.TryParse(startDate, out startDateParsed) || !DateTime.TryParse(endDate, out endDateParsed))
+            {
+                Response.Write("Por favor ingrese fechas validas.");
+                return;
+            }
+
+            // Validar que las fechas estén en un rango válido
+            if (startDateParsed > endDateParsed)
+            {
+                Response.Write("La fecha de inicio debe ser menor a la fecha de fin.");
+                return;
+            }
+
             // Obtener la consulta seleccionada 
             string selectedQuery = Request.QueryString["consultaId"];
             string query = GetQueryBySelection(selectedQuery, startDate, endDate);
 
-            // Crear una conexión MySQL aqui deben poner la información del servidor, de la bdd, usuario y password
-
-            using (MySqlConnection connection = new MySqlConnection(Globales.connectionStringLocal))
-
+            if (string.IsNullOrEmpty(query))
             {
+                Response.Write("Consulta no válida.");
+                return;
+            }
 
+            // Crear una conexión MySQL
+            using (MySqlConnection connection = new MySqlConnection(Globales.connectionStringLocal))
+            {
                 // Crear un comando MySQL
-
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@startDate", DateTime.Parse(startDate));
-                    command.Parameters.AddWithValue("@endDate", DateTime.Parse(endDate));
+                    command.Parameters.AddWithValue("@startDate", startDate);
+                    command.Parameters.AddWithValue("@endDate", endDate);
 
                     // Abrir la conexión
                     connection.Open();
 
                     try
-
                     {
-
                         // Crear un adaptador de datos
-
                         using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
-
                         {
-
                             // Crear un DataTable para almacenar los datos
-
                             DataTable dataTable = new DataTable();
 
-
-
                             // Llenar el DataTable
-
                             adapter.Fill(dataTable);
 
-
+                            // Verificar si el DataTable está vacío
+                            if (dataTable.Rows.Count == 0)
+                            {
+                                Response.Write("No se encontraron resultados para las fechas proporcionadas.");
+                                return;
+                            }
 
                             // Asignar el DataTable al GridView
-
                             GridViewResults.DataSource = dataTable;
-
                             GridViewResults.DataBind();
-
                         }
-
                     }
-
                     catch (Exception ex)
-
                     {
-
                         // Manejo de excepciones
-
-                        // Puedes mostrar un mensaje de error o registrar el error
-
                         Response.Write("Error: " + ex.Message);
-
                     }
-
                 }
-
             }
         }
 
