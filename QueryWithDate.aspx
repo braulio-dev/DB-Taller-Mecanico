@@ -4,18 +4,20 @@
    
     <main>
         <div>
-            <label for="txtStartDate">Start Date:</label>
+            <label for="txtStartDate">Fecha Inicio:</label>
             <asp:TextBox ID="txtStartDate" runat="server" CssClass="form-control" Placeholder="YYYY-MM-DD"></asp:TextBox>
         </div>
 
         <div>
-            <label for="txtEndDate">End Date:</label>
+            <label for="txtEndDate">Fecha Fin:</label>
             <asp:TextBox ID="txtEndDate" runat="server" CssClass="form-control" Placeholder="YYYY-MM-DD"></asp:TextBox>
         </div>
 
-        <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="query-button" />
+        <asp:Button ID="btnSearch" runat="server" Text="Buscar" OnClick="btnSearch_Click" CssClass="query-button" />
 
-        <asp:GridView ID="GridViewResults" runat="server" AutoGenerateColumns="true"></asp:GridView>
+         <div>
+             <asp:GridView ID="GridViewResults" runat="server" AutoGenerateColumns="true" CssClass="table table-bordered" />
+         </div>
 
         <style>
             .form-control {
@@ -35,6 +37,22 @@
 
             .query-button:hover {
                 background-color: #0056b3;
+            }
+
+            .table {
+                width: 100%;
+                margin-top: 20px;
+                border-collapse: collapse;
+            }
+
+            .table-bordered {
+                border: 1px solid #ddd;
+            }
+
+            .table-bordered th, .table-bordered td {
+                padding: 8px;
+                text-align: left;
+                border: 1px solid #ddd;
             }
         </style>
     </main>

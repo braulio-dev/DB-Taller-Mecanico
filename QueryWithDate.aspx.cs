@@ -107,27 +107,12 @@ namespace ProyectoBD
             // Condicional para definir la consulta SQL basada en la seleccion en el menu de consultas
             switch (selectedQuery)
             {
-                case "1":
-                    query = @"
-                        SELECT Nombre 
-                        FROM vw_reparaciones 
-                        WHERE Fecha_inicio >= @startDate AND Fecha_inicio <= @endDate 
-                        GROUP BY Nombre 
-                        ORDER BY COUNT(*) DESC 
-                        LIMIT 1";
-                    break;
                 case "5":
                     query = @"
                         SELECT Nombre_Departamento, COUNT(*) AS Numero_de_Atenciones
                         FROM vw_diagnostico_departamento
                         WHERE Fecha_inicio >= @startDate AND Fecha_inicio <= @endDate 
                         GROUP BY ID_Departamento";
-                    break;
-                case "6":
-                    query = @"
-                        SELECT SUM(Costo_Total) AS Ganancias
-                        FROM vw_ventas_dep1
-                        WHERE Fecha_inicio >= @startDate AND Fecha_inicio <= @endDate";
                     break;
                 case "7":
                     query = @"

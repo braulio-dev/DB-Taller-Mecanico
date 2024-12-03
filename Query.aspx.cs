@@ -107,18 +107,22 @@ namespace ProyectoBD
         {
             switch (consultaId)
             {
+                case "1":
+                    return "SELECT * FROM vw_empleado_garantias_aplicadas";
                 case "2":
                     return "SELECT * FROM vw_promociones_dep_mecanico";
                 case "3":
                     return "SELECT * FROM vw_refacciones";
                 case "4":
                     return "SELECT * FROM vw_ventas_diagnostico";
+                case "6":
+                    return "SELECT * FROM vw_deparamentos_gastos_garantias";
                 case "8":
                     return "SELECT * FROM vw_empleados_dep4";
                 case "9":
                     return "SELECT * FROM vw_cliente_automovil";
                 case "10":
-                    return "SELECT * FROM vw_reparaciones_dep2";
+                    return "SELECT * FROM vw_reportes_refacciones";
                 case "15":
                     return "SELECT * FROM vw_top_reparaciones";
                 default:
